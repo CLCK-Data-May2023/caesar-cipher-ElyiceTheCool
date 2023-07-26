@@ -19,4 +19,4 @@ for letter in user_char:
 
 # Put the letters back together and present
 encrypted_sentence = "".join(encrypted_list)
-print(encrypted_sentence)
+print("The encrypted sentence is:", encrypted_sentence)
