@@ -9,8 +9,13 @@ encrypted_list = []
 
 for letter in user_char:
     char_index = abc.find(letter)
-    encrypted_char = abc[char_index + 5]
-    encrypted_list.append(encrypted_char)
+    if letter == " ":
+        encrypted_list.append(letter)
+    elif letter.isalnum() == False:
+        encrypted_list.append(letter)
+    else:
+        encrypted_char = abc[char_index + 5]
+        encrypted_list.append(encrypted_char)
 
 encrypted_sentence = "".join(encrypted_list)
 print(encrypted_sentence)
@@ -19,4 +24,3 @@ print(encrypted_sentence)
 # Use modelo to take care of indexes larger than 25
 
 # Print full encrypted sentence
-
