@@ -1,12 +1,11 @@
-# Get user sentence as input
-user_sentence = input("Please enter a sentence: ")
+# Get input and break it into pieces
+user_sentence = input("Please enter a sentence: ").lower()
 user_char = list(user_sentence)
 
-# Get character index of each letter in sentence
 abc = "abcdefghijklmnopqrstuvwxyz"
-
 encrypted_list = []
 
+# Get character index of each letter in sentence
 for letter in user_char:
     char_index = abc.find(letter)
     if letter == " ":
@@ -14,13 +13,10 @@ for letter in user_char:
     elif letter.isalnum() == False:
         encrypted_list.append(letter)
     else:
-        encrypted_char = abc[char_index + 5]
+        # Shifted to the right 5
+        encrypted_char = abc[(char_index + 5) % 26]
         encrypted_list.append(encrypted_char)
 
+# Put the letters back together and present
 encrypted_sentence = "".join(encrypted_list)
 print(encrypted_sentence)
-
-# Encrypt by moving index to the right 5 spaces
-# Use modelo to take care of indexes larger than 25
-
-# Print full encrypted sentence
